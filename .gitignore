@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+*.local
+*.tsbuildinfo
+scripts/smoke-out
+
+# Local-only source material (raw Instagram downloads and the third-party reference mock-up)
+pizza-images/
+app-design/app-design.jpeg
