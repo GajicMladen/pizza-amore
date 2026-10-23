@@ -1,0 +1,26 @@
+{
+  "id": "/kuhinja",
+  "name": "Amore · Kuhinja",
+  "short_name": "Kuhinja",
+  "description": "Portal za kuhinju — Amore Pizzeria",
+  "lang": "sr",
+  "start_url": "/kuhinja",
+  "scope": "/kuhinja",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#16292A",
+  "background_color": "#16292A",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
