@@ -1,9 +1,21 @@
-// Imported by the generated service worker (vite.config.ts → workbox.importScripts). Two jobs:
+// Imported by the generated service worker (vite.config.ts → workbox.importScripts). Three jobs:
+//  - `fetch` for kitchen navigations (/kuhinja…): network first, offline → the precached kuhinja.html. Workbox's navigateFallback
+//    (index.html, the customer shell) is denylisted for these paths, because kuhinja.html carries the kitchen manifest iOS needs.
 //  - `push`: a Web Push message from the Cloud Function `kitchenPush` (data-only payload { title, body, tag, url }) → show it,
 //    unless a kitchen tab is on screen (that tab rings and shows its own notification; a focused window also exempts us
 //    from Chrome's "site updated in the background" placeholder). The tag per order collapses duplicates.
 //  - `notificationclick`: focus the open kitchen tab, or open one.
 const kitchenUrl = () => self.registration.scope + 'kuhinja'
+
+self.addEventListener('fetch', (event) => {
+  const req = event.request
+  if (req.mode !== 'navigate') return
+  const scopePath = new URL(self.registration.scope).pathname
+  if (!new URL(req.url).pathname.startsWith(scopePath + 'kuhinja')) return
+  event.respondWith(
+    fetch(req).catch(async () => (await caches.match(scopePath + 'kuhinja.html', { ignoreSearch: true })) || Response.error()),
+  )
+})
 
 self.addEventListener('push', (event) => {
   let payload = {}

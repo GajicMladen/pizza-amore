@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="sr" data-tenant="amore">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="Portal za kuhinju — Amore" />
+    <meta name="theme-color" content="#16292A" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Kuhinja" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- The kitchen's own manifest, in the HTML from the start: iOS Safari reads the manifest link when the page loads and
+         ignores a later change by the app, so a dynamically swapped link made "Add to Home Screen" install the customer app. -->
+    <link rel="manifest" href="/manifest-kuhinja.webmanifest" />
+    <title>Kuhinja · Amore</title>
+    <style>
+      /* Splash painted before the JS bundle arrives: the kitchen is dark, so the splash is too. */
+      html, body, #root { height: 100%; margin: 0; }
+      body { background: #16292A; }
+      .splash { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--color-cream-100, #fff); }
+      .splash-name { font-family: var(--font-display, sans-serif); font-weight: var(--display-weight, 400); font-size: calc(40px * var(--display-scale, 1)); letter-spacing: var(--display-tracking, 0.02em); text-transform: var(--display-case, none); }
+      .splash-sub { font: 600 12px -apple-system, BlinkMacSystemFont, system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+    </style>
+  <style id="tenant-theme">
+ html[data-tenant="amore"] {
+  --color-cream-50: #FFFBF3;
+  --color-cream-100: #FBF5E8;
+  --color-cream-200: #F3EAD6;
+  --color-cream-300: #E6DAC0;
+  --color-cream-400: #CDBE9E;
+  --color-azure-100: #E8F6FD;
+  --color-azure-200: #D0ECFC;
+  --color-azure-300: #AEDCF5;
+  --color-azure-400: #7EC3E8;
+  --color-on-primary: #1C3433;
+  --color-forest-950: #0F1E1E;
+  --color-forest-900: #16292A;
+  --color-forest-800: #1C3433;
+  --color-forest-700: #223D39;
+  --color-forest-600: #2F5350;
+  --color-forest-500: #3E6B66;
+  --color-forest-400: #5F8C86;
+  --color-flame-100: #FDEBD8;
+  --color-flame-200: #FBC290;
+  --color-flame-500: #E07A2E;
+  --color-flame-600: #D16E21;
+  --color-flame-700: #B85A16;
+  --color-tomato-500: #D8432F;
+  --color-tomato-100: #FBE3DF;
+  --color-basil-500: #5C8D5E;
+  --color-basil-100: #E4F0E3;
+  --color-ink: #16292A;
+  --color-ink-2: #51605F;
+  --color-ink-3: #8A9593;
+  --font-display: "Bebas Neue", "Impact", "Arial Narrow", sans-serif;
+  --display-scale: 1;
+  --display-tracking: 0.02em;
+  --display-case: none;
+  --display-weight: 400;
+  --motif: repeating-linear-gradient(90deg, var(--color-azure-200) 0 22px, var(--color-cream-50) 22px 44px);
+  --glass-bg: rgba(251, 245, 232, 0.78);
+ }
+/* self-hosted display font (latin + latin-ext for Serbian diacritics); / is filled in by vite.config.ts */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/bebas-neue-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/bebas-neue-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+    
+    <script type="module" crossorigin src="/assets/main-DX9rzWg2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BrkOhPAs.css"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="root"><div class="splash"><span class="splash-name">KUHINJA</span><span class="splash-sub">Amore · Učitavanje</span></div></div>
+  </body>
+</html>
